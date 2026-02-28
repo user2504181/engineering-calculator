@@ -1,0 +1,9 @@
+[android]
+product = "Engineering Calculator"
+org = "com.gideon"
+build_version = "1.0.0"
+build_number = 1
+permissions = ["INTERNET"]
+# This disables Impeller at the manifest level to fix the black screen
+features = ["--no-impeller"] 
+
