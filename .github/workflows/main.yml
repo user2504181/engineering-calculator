@@ -32,12 +32,11 @@ jobs:
         run: pip install flet
 
       - name: Build APK
-        run: flet build apk --project-name "EngineeringCalc" --product "Engineering Calculator" --org "com.gideon" --project-version "1.0.0"
+        run: flet build apk --project-name "engineering_calc" --product "Engineering Calculator" --org "com.gideon" --build-version "1.0.0" --build-number 1
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: Engineering-Calculator-APK
           path: build/apk/**/*.apk
-          
           
