@@ -23,6 +23,9 @@ jobs:
         with:
           channel: 'stable'
 
+      - name: Accept Android Licenses
+        run: yes | flutter doctor --android-licenses
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
