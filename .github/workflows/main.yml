@@ -1,0 +1,30 @@
+name: Build Android APK
+
+on:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install Flet
+        run: pip install flet
+
+      - name: Build APK
+        run: flet build apk --project-name "EngineeringCalc" --product "Engineering Calculator" --org "com.gideon" --project-version "1.0.0"
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v3
+        with:
+          name: Engineering-Calculator-APK
+          path: build/apk/**/*.apk
