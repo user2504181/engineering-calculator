@@ -232,6 +232,7 @@ def main(page: ft.Page):
     )
 
     page.add(t)
+    page.update() # Explicitly update the page to ensure it draws on startup
 
 ft.app(target=main)
-  
+    
