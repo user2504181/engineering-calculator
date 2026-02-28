@@ -23,8 +23,12 @@ jobs:
         with:
           channel: 'stable'
 
-      - name: Accept Android Licenses
-        run: yes | flutter doctor --android-licenses
+      - name: Satisfy Flutter Doctor
+        run: |
+          yes | flutter doctor --android-licenses
+          sudo apt-get update
+          sudo apt-get install -y libgtk-3-dev mesa-utils
+          flutter config --no-enable-linux-desktop
 
       - name: Setup Python
         uses: actions/setup-python@v5
