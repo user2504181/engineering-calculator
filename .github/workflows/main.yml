@@ -32,7 +32,7 @@ jobs:
         run: pip install flet
 
       - name: Build APK
-        run: flet build apk --product "Engineering Calculator" --org "com.gideon" --build-version "1.0.0"
+        run: flet build apk --product "Engineering Calculator" --org "com.gideon" --build-version "1.0.0" --no-impeller --include-permissions internet
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
